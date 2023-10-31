@@ -1,19 +1,26 @@
 package ro.uvt.info.designpatterlab2023.model;
 
-public class TableOfContents {
-    public String content;
+import java.util.ArrayList;
+import java.util.List;
+public class TableOfContents implements TextElement {
+    private List<TextElement> entries = new ArrayList<>();
 
-    @Override
-    public void add(Element e){
-
+    public void add(int index, TextElement element) {
+        throw new UnsupportedOperationException("You cannot do that");
     }
 
-    @Override
-    public void remove(Element e){
-
+    public TextElement get(int index) {
+        throw new UnsupportedOperationException("You cannot do that");
     }
 
-    public void print(){
-        System.out.println(content);
+    public void remove(TextElement element) {
+        throw new UnsupportedOperationException("You cannot do that");
+    }
+
+    public void print() {
+        System.out.println("Table of Contents:");
+        for (TextElement entry : entries) {
+            entry.print();
+        }
     }
 }

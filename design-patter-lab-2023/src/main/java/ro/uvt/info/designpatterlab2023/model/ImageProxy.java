@@ -1,24 +1,25 @@
 package ro.uvt.info.designpatterlab2023.model;
 
-import java.util.concurrent.TimeUnit;
+public class ImageProxy implements TextElement, Picture{
+    String url;
+    private Image realImage;
 
-public class Image implements TextElement, Picture {
-    private String name;
+    public ImageProxy(String url) {
+        this.url = url;
+        this.realImage = null;
+    }
 
-    public Image(String name) {
-        this.name = name;
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    @Override
+    public void print() {
+        loadImage();
+        realImage.print();
     }
 
     public void add(int index, TextElement element) {
         throw new UnsupportedOperationException("You cannot do that");
     }
 
-    public TextElement get(int index) {
+    public TextElement get(int id) {
         throw new UnsupportedOperationException("You cannot do that");
     }
 
@@ -31,7 +32,10 @@ public class Image implements TextElement, Picture {
         throw new UnsupportedOperationException("You cannot do that");
     }
 
-    public void print() {
-        System.out.println("Image with name: " + name);
+    Image loadImage(){
+        if(realImage == null){
+            realImage=new Image(url);
+        }
+        return realImage;
     }
 }

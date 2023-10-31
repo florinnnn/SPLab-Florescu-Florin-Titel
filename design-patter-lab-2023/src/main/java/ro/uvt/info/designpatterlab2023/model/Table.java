@@ -1,19 +1,25 @@
 package ro.uvt.info.designpatterlab2023.model;
 
-public class Table {
-    public String title;
+public class Table implements TextElement {
+    private String title;
 
-    @Override
-    public void add(Element e){
-
+    public Table(String title) {
+        this.title = title;
     }
 
-    @Override
-    public void remove(Element e){
-
+    public void add(int index, TextElement element) {
+        throw new UnsupportedOperationException("You cannot do that");
     }
 
-    public void print(){
-        System.out.println(title);
+    public TextElement get(int index) {
+        throw new UnsupportedOperationException("You cannot do that");
+    }
+
+    public void remove(TextElement element) {
+        throw new UnsupportedOperationException("You cannot do that");
+    }
+
+    public void print() {
+        System.out.println("Table: " + title);
     }
 }

@@ -4,25 +4,29 @@ import java.util.List;
 import java.util.ArrayList;
 public class Book {
     private String title;
-    private List<Element> elementsList = new ArrayList<Element>();
-    private List<Author> authorList = new ArrayList<Author>();
+    private List<Author> authors = new ArrayList<>();
+    private List<TextElement> contents = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
     }
 
     public void addAuthor(Author author) {
-        authorList.add(author);
+        authors.add(author);
     }
 
-    public void addContent(Element element) {
-        elementsList.add(element);
+    public void addContent(TextElement content) {
+        contents.add(content);
     }
 
     public void print() {
-        System.out.println(title);
-        authorList.forEach(e -> e.print());
-        elementsList.forEach(e -> e.print());
-
+        System.out.println("Book: " + title);
+        System.out.println("Authors:");
+        for (Author author : authors) {
+            author.print();
+        }
+        for (TextElement content : contents) {
+            content.print();
+        }
     }
 }
