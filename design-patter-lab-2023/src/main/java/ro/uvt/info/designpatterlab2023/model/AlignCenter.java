@@ -1,14 +1,21 @@
 package ro.uvt.info.designpatterlab2023.model;
 
-public class AlignCenter implements AlignStrategy{
+public class AlignCenter implements AlignStrategy {
+    public String render(String text, int lineLength) {
+        int length = text.length();
+        StringBuilder result = new StringBuilder();
+        int start = 0;
+        while (start < length) {
+            int end = Math.min(start + lineLength, length);
+            int padding = (lineLength - (end - start)) / 2;
+            result.append(" ".repeat(padding)).append(text, start, end).append('\n');
+            start = end;
+        }
+        return result.toString();
+    }
+
     @Override
     public void printAligned(String text) {
-        System.out.println("Center alignment:");
-        int lineWidth = 80;
-        int spaces = (lineWidth - text.length()) / 2;
-        for (int i = 0; i < spaces; i++) {
-            System.out.print(" ");
-        }
-        System.out.println(text);
+
     }
 }

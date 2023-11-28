@@ -1,14 +1,20 @@
 package ro.uvt.info.designpatterlab2023.model;
 
-public class AlignRight implements AlignStrategy{
+public class AlignRight implements AlignStrategy {
+    public String render(String text, int lineLength) {
+        int length = text.length();
+        StringBuilder result = new StringBuilder();
+        int start = 0;
+        while (start < length) {
+            int end = Math.min(start + lineLength, length);
+            result.append(" ".repeat(lineLength - (end - start))).append(text, start, end).append('\n');
+            start = end;
+        }
+        return result.toString();
+    }
+
     @Override
     public void printAligned(String text) {
-        System.out.println("Right alignment:");
-        int lineWidth = 80;
-        int spaces = lineWidth - text.length();
-        for (int i = 0; i < spaces; i++) {
-            System.out.print(" ");
-        }
-        System.out.println(text);
+
     }
 }
