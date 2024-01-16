@@ -1,4 +1,4 @@
-package ro.uvt.info.designpatterlab2023.model;
+package ro.uvt.info.designpatterlab2023.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
