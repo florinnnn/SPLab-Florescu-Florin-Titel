@@ -1,9 +1,12 @@
 package ro.uvt.info.designpatterlab2023.model;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.SpringApplication;import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import ro.uvt.info.designpatterlab2023.model.*;
+import org.springframework.context.ApplicationContext;
+import ro.uvt.info.designpatterlab2023.model.Services.ClientComponent;
+import ro.uvt.info.designpatterlab2023.model.Services.SingletonComponent;
+import ro.uvt.info.designpatterlab2023.model.Services.TransientComponent;
+
 @SpringBootApplication
 public class SpLabApplication {
 

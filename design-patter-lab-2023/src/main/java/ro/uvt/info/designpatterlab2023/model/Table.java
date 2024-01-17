@@ -1,10 +1,14 @@
 package ro.uvt.info.designpatterlab2023.model;
 
-public class Table implements TextElement {
+public class Table implements TextElement, Visitee {
     private String title;
 
     public Table(String title) {
         this.title = title;
+    }
+
+    public String getTitle(){
+        return title;
     }
 
     public void add(int index, TextElement element) {
@@ -19,7 +23,7 @@ public class Table implements TextElement {
         throw new UnsupportedOperationException("You cannot do that");
     }
 
-    public void print() {
-        System.out.println("Table: " + title);
+    public void accept(Visitor v) {
+        v.visitTable(this);
     }
 }

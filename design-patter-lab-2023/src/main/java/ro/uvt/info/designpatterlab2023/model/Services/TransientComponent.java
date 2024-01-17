@@ -1,4 +1,4 @@
-package ro.uvt.info.designpatterlab2023.model;
+package ro.uvt.info.designpatterlab2023.model.Services;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
