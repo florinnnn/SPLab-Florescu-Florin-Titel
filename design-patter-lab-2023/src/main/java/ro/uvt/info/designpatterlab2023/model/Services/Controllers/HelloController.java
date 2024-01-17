@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ro.uvt.info.designpatterlab2023.model.ClientComponent;
+import ro.uvt.info.designpatterlab2023.model.Services.ClientComponent;
 import ro.uvt.info.designpatterlab2023.model.Services.TransientComponent;
 import ro.uvt.info.designpatterlab2023.model.Services.SingletonComponent;
 
